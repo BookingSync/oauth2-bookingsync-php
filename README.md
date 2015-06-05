@@ -26,7 +26,8 @@ Usage is the same as The League's OAuth client, using `\Bookingsync\OAuth2\Clien
 $provider = new Bookingsync\OAuth2\Client\Provider\Bookingsync([
     'clientId'          => '{bookingsync-client-id}',
     'clientSecret'      => '{bookingsync-client-secret}',
-    'redirectUri'       => 'https://example.com/callback-url'
+    'redirectUri'       => 'https://example.com/callback-url',
+    'scopes'            => ['public', '...', '...']
 ]);
 
 if (!isset($_GET['code'])) {
