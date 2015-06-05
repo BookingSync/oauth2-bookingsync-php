@@ -1,7 +1,7 @@
 # BookingSync Provider for OAuth 2.0 Client
-[![Latest Version](https://img.shields.io/github/release/bookingsync/oauth2-bookingsync-php.svg?style=flat-square)](https://github.com/bookingsync/oauth2-bookingsync-php/releases)
+[![Latest Version](https://img.shields.io/github/release/BookingSync/oauth2-bookingsync-php.svg?style=flat-square)](https://github.com/bookingsync/oauth2-bookingsync-php/releases)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Build Status](https://img.shields.io/travis/bookingsync/oauth2-bookingsync-php/master.svg?style=flat-square)](https://travis-ci.org/bookingsync/oauth2-bookingsync-php)
+[![Build Status](https://img.shields.io/travis/BookingSync/oauth2-bookingsync-php/master.svg?style=flat-square)](https://travis-ci.org/bookingsync/oauth2-bookingsync-php)
 [![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/bookingsync/oauth2-bookingsync-php.svg?style=flat-square)](https://scrutinizer-ci.com/g/bookingsync/oauth2-bookingsync-php/code-structure)
 [![Quality Score](https://img.shields.io/scrutinizer/g/bookingsync/oauth2-bookingsync-php.svg?style=flat-square)](https://scrutinizer-ci.com/g/bookingsync/oauth2-bookingsync-php)
 [![Total Downloads](https://img.shields.io/packagist/dt/bookingsync/oauth2-bookingsync-php.svg?style=flat-square)](https://packagist.org/packages/bookingsync/oauth2-bookingsync-php)
