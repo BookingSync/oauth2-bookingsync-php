@@ -1,0 +1,39 @@
+{
+    "name": "bookingsync/oauth2-bookingsync-php",
+    "description": "BookingSync OAuth 2.0 Client Provider for The PHP League OAuth2-Client",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sebastien Grosjean",
+            "email": "dev@bookingsync.com",
+            "homepage": "https://github.com/bookingsync"
+        }
+    ],
+    "version": "0.1.0",
+    "keywords": [
+        "oauth",
+        "oauth2",
+        "client",
+        "authorization",
+        "authorisation",
+        "bookingsync"
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "league/oauth2-client": ">=0.10.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0",
+        "mockery/mockery": "~0.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Bookingsync\\OAuth2\\Client\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Bookingsync\\OAuth2\\Client\\Test\\": "test/src/"
+        }
+    }
+}
