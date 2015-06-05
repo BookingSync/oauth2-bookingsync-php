@@ -87,7 +87,7 @@ class BookingsyncTest extends \PHPUnit_Framework_TestCase
         $postResponse->shouldReceive('getBody')->times(1)->andReturn('{"access_token": "mock_access_token","token_type": "Bearer","expires_in": "mock_expires","refresh_token": "mock_refresh_token","scope": "scope1 scope2"}');
 
         $getResponse = m::mock('Guzzle\Http\Message\Response');
-        $getResponse->shouldReceive('getBody')->times(4)->andReturn('{"id": "mock_id","business_name": "mock_business_name","email": "mock_email"}');
+        $getResponse->shouldReceive('getBody')->times(4)->andReturn('{"accounts": [{"id": "mock_id","business_name": "mock_business_name","email": "mock_email"}]}');
 
         $client = m::mock('Guzzle\Service\Client');
         $client->shouldReceive('setBaseUrl')->times(5);
@@ -100,7 +100,9 @@ class BookingsyncTest extends \PHPUnit_Framework_TestCase
         $user = $this->provider->getUserDetails($token);
 
         $this->assertEquals('mock_id', $this->provider->getUserUid($token));
+        $this->assertEquals('mock_id', $user->uid);
         $this->assertEquals('mock_business_name', $this->provider->getUserScreenName($token));
+        $this->assertEquals('mock_business_name', $user->name);
         $this->assertEquals('mock_email', $this->provider->getUserEmail($token));
         $this->assertEquals('mock_email', $user->email);
     }

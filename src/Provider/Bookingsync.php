@@ -64,19 +64,34 @@ class Bookingsync extends AbstractProvider
      */
     public function userDetails($response, AccessToken $token)
     {
+        $response = current($response->accounts);
+
         $user = new User();
 
         $user->exchangeArray([
             'uid' => isset($response->id) ? $response->id : null,
-            'business_name' => isset($response->business_name) ? $response->business_name : null,
+            'name' => isset($response->business_name) ? $response->business_name : null,
             'email' => isset($response->email) ? $response->email : null
         ]);
 
         return $user;
     }
 
+    public function userUid($response, AccessToken $token)
+    {
+        $response = current($response->accounts);
+        return isset($response->id) && $response->id ? $response->id : null;
+    }
+
+    public function userEmail($response, AccessToken $token)
+    {
+        $response = current($response->accounts);
+        return isset($response->email) && $response->email ? $response->email : null;
+    }
+
     public function userScreenName($response, AccessToken $token)
     {
+        $response = current($response->accounts);
         return isset($response->business_name) && $response->business_name ? $response->business_name : null;
     }
 }

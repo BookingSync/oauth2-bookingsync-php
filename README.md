@@ -24,10 +24,10 @@ Usage is the same as The League's OAuth client, using `\Bookingsync\OAuth2\Clien
 
 ```php
 $provider = new Bookingsync\OAuth2\Client\Provider\Bookingsync([
-    'clientId'          => '{bookingsync-client-id}',
-    'clientSecret'      => '{bookingsync-client-secret}',
-    'redirectUri'       => 'https://example.com/callback-url',
-    'scopes'            => ['public', '...', '...']
+    'clientId'          => 'XXXXXXXX',
+    'clientSecret'      => 'XXXXXXXX',
+    'redirectUri'       => 'https://www.example.com/callback-url', // https is mandatory for BookingSync
+    'scopes'            => ['public'] // scopes required by your BookingSync application.
 ]);
 
 if (!isset($_GET['code'])) {
@@ -68,6 +68,12 @@ if (!isset($_GET['code'])) {
 
     // Use this to interact with an API on the users behalf
     echo $token->accessToken;
+
+    // Use this to get a new access token if the old one expires
+    echo $token->refreshToken;
+
+    // Unix timestamp of when the token will expire, and need refreshing
+    echo $token->expires;
 }
 ```
 
@@ -81,7 +87,7 @@ $provider = new Bookingsync\OAuth2\Client\Provider\Bookingsync([
 ]);
 
 $grant = new \League\OAuth2\Client\Grant\RefreshToken();
-$token = $provider->getAccessToken($grant, ['refresh_token' => $refreshToken]);
+$token = $provider->getAccessToken($grant, ['refresh_token' => $token->refreshToken]);
 ```
 
 ## Testing
