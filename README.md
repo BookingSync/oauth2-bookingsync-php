@@ -8,6 +8,12 @@
 
 This package provides BookingSync OAuth 2.0 support for the PHP League's [OAuth 2.0 Client](https://github.com/thephpleague/oauth2-client).
 
+## Deprecation warning
+
+This lib use old deprecated vendors. You may have an SSL certificate issue. To solve it, you should:
+- Replace the cacert.pem file in the deprecated GuzzleHttp repo with an updated one from https://curl.haxx.se/docs/caextract.html
+- The location of the old pem file is `vendor/guzzle/guzzle/src/Guzzle/Http/Resources/cacert.pem`
+
 ## Installation
 
 To install, use composer:
